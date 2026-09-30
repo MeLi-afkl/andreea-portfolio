@@ -1,8 +1,4 @@
 function Projects() {
-  const openProject = (url: string) => {
-    window.open(url, "_blank", "noopener,noreferrer")
-  }
-
   return (
     <section className="projects-section" id="projects">
       <div className="section-heading">
@@ -13,7 +9,6 @@ function Projects() {
       </div>
 
       <div className="project-grid">
-
         {/* 01 — VERILENS */}
         <article className="project-card">
           <div className="project-preview veriliens-preview">
@@ -47,6 +42,7 @@ function Projects() {
                 className="project-button disabled"
                 aria-label="VeriLens project"
                 title="Private project"
+                disabled
               >
                 ↗
               </button>
@@ -82,17 +78,15 @@ function Projects() {
                 <small>Security</small>
               </div>
 
-              <button
+              <a
                 className="project-button"
-                aria-label="View StegaCrypt project"
-                onClick={() =>
-                  openProject(
-                    "https://github.com/MeLi-afkl/StegaCrypt-AES"
-                  )
-                }
+                href="https://github.com/MeLi-afkl/StegaCrypt-AES"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View StegaCrypt AES on GitHub"
               >
                 ↗
-              </button>
+              </a>
             </div>
           </div>
         </article>
@@ -125,17 +119,15 @@ function Projects() {
                 <small>Grafana</small>
               </div>
 
-              <button
+              <a
                 className="project-button"
-                aria-label="View Monitoring Stack project"
-                onClick={() =>
-                  openProject(
-                    "https://github.com/MeLi-afkl/monitoring-stack"
-                  )
-                }
+                href="https://github.com/MeLi-afkl/monitoring-stack"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Monitoring Stack on GitHub"
               >
                 ↗
-              </button>
+              </a>
             </div>
           </div>
         </article>
@@ -146,9 +138,7 @@ function Projects() {
             <span className="project-number">04</span>
 
             <div className="cloud-visual">
-              <div className="cloud-node cloud-node-top">
-                ☁
-              </div>
+              <div className="cloud-node cloud-node-top">☁</div>
 
               <div className="cloud-line"></div>
 
@@ -179,21 +169,18 @@ function Projects() {
                 <small>AWS</small>
               </div>
 
-              <button
+              <a
                 className="project-button"
-                aria-label="View Cloud Native App project"
-                onClick={() =>
-                  openProject(
-                    "https://github.com/MeLi-afkl/cloud-native-app"
-                  )
-                }
+                href="https://github.com/MeLi-afkl/cloud-native-app"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View Cloud Native App on GitHub"
               >
                 ↗
-              </button>
+              </a>
             </div>
           </div>
         </article>
-
       </div>
     </section>
   )
