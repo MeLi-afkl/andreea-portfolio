@@ -3614,3 +3614,154 @@ button {
     grid-template-columns: 1fr;
   }
 }
+/* =========================================================
+   MOBILE NAVIGATION
+   ========================================================= */
+
+.menu-toggle {
+  display: none;
+}
+
+.mobile-contact-link {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    position: relative;
+    z-index: 1000;
+
+    height: 76px;
+    padding: 0 22px;
+
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+
+    background: #080b12;
+  }
+
+  .brand {
+    position: relative;
+    z-index: 1002;
+  }
+
+  .brand-name {
+    font-size: 17px;
+  }
+
+  /* Ascundem butonul desktop "Let's build" */
+  .nav-cta {
+    display: none;
+  }
+
+  /* Hamburger */
+  .menu-toggle {
+    position: relative;
+    z-index: 1002;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+
+    padding: 0;
+    border: 1px solid #272d3a;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.02);
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+    width: 19px;
+    height: 1.5px;
+
+    display: block;
+
+    background: #ffffff;
+
+    transition:
+      transform 0.25s ease,
+      opacity 0.25s ease;
+  }
+
+  /* Hamburger -> X */
+  .menu-toggle-open span:first-child {
+    transform: translateY(4.25px) rotate(45deg);
+  }
+
+  .menu-toggle-open span:last-child {
+    transform: translateY(-4.25px) rotate(-45deg);
+  }
+
+  /* Mobile menu */
+  .nav-links {
+    position: fixed;
+    inset: 76px 0 0;
+
+    z-index: 1001;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 0;
+
+    padding: 50px 28px;
+
+    background: rgba(8, 11, 18, 0.98);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-12px);
+
+    transition:
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      visibility 0.25s ease;
+  }
+
+  .nav-links-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0);
+  }
+
+  .nav-links a {
+    width: 100%;
+
+    padding: 20px 0;
+
+    border-bottom: 1px solid #1d2230;
+
+    color: #aeb2be;
+
+    font-family: 'Manrope', sans-serif;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: #ffffff;
+  }
+
+  .nav-links a.active {
+    border-bottom-color: #7650ff;
+  }
+
+  .mobile-contact-link {
+    display: block !important;
+    color: #8c6cff !important;
+  }
+}
